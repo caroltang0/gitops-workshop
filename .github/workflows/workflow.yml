@@ -28,6 +28,9 @@ jobs:
     steps:
       - name: Checkout GitOps repository
         uses: actions/checkout@v4
+      
+      - name: Make gitops script executable
+        run: chmod +x gitops.sh
 
       - name: Apply latest configuration to Fleet
         uses: ./.github/gitops-action
